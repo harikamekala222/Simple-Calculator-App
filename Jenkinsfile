@@ -27,7 +27,7 @@ pipeline {
                         --exclude='.git' \
                         --exclude='node_modules' \
                         --exclude='dist' \
-                        "WORKSPACE/""{PROJECT_DIR}/"
+                        "${WORKSPACE}/" "${PROJECT_DIR}/"
 
                     sudo chown -R jenkins:jenkins "${PROJECT_DIR}"
 
@@ -135,7 +135,7 @@ EOF
     post {
 
         success {
-            echo "SUCCESS: Simple Calculator Web App deployed successfully!"
+            echo "SUCCESS: Calculator Web App deployed successfully!"
         }
 
         failure {
